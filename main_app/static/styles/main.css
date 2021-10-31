@@ -1,0 +1,133 @@
+body {
+    background-color:black;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    color: #ffffff;
+  }
+  
+  .title {
+    color: #ffffff;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  /* .gallery .card {
+    transition: .1s linear;
+  } */
+  
+  .gallery .card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  
+  p {
+    font-size: 12px;
+  }
+
+  /*-------Login Page CSS -------------*/
+
+  @import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+.login {
+  width: 500px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+.form input {
+    font-family: "Lato", sans-serif;
+    outline: 0;
+    /* background: #b88282; */
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+button {
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #262725;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+
+/* .form button:hover,.form button:active,.form button:focus {
+    background: #3d3d3d;
+  } */
+
+.login-template {
+    background: #3d3d3d; 
+    font-family: "Lato", sans-serif;     
+  }
+
+.form{
+  /* background-color: aqua; */
+}
+/* input {
+  background: pink;
+} */
+  /* ---- For Songs list on Artist Detail Page  ------ */
+
+.detail__songs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.song {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 0.1fr 3fr 1fr;
+  border-radius: 5px;
+}
+
+.song:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+  cursor: pointer;
+}
+
+.buttons {
+  color: #ffffff;
+  display:flex;
+  justify-content:space-between;
+  outline: 1px solid whitesmoke;
+}
+
+table tr td{
+  border: 1px solid rgb(151, 53, 53);
+}
+
+.bor1 {
+  border: 1px solid black;
+}

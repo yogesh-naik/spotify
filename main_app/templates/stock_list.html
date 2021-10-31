@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title%} 
+Stock Market PAGE. 
+{% endblock %} 
+
+{% block content %}
+<table>
+<!-- {% for k,v in stock %}
+    <tr>
+        <td><b>{{k}} </b></td>
+        <td><b>{{v}} </b></td>
+    </tr>
+    {% endfor %} -->
+</table>
+<!-- <div class="box">
+    I'm in a box.
+    <br>
+    <br>
+    I'm in a box.
+    I'm in a box.
+    <br>
+    <br>
+    I'm in a box.
+    I'm in a box.
+    <br>
+    <br>
+    I'm in a box.
+    I'm in a box.
+    <br>
+    <br>
+    I'm in a box.
+    
+  </div> -->
+<!----- This stock data-->
+
+<!-- {% for k,v in stock %}
+{% if v == "Tesla Inc" %}
+
+<div class="box has-background-info bor1" id="bor">
+    <div class="columns" >
+      <div class="column is-half has-background-info is-size-2 has-text-centered">{{v}}</div>
+      {% elif k == "price" %}
+        <div class="column has-background-warning bor1">{{k}} : {{v}}</div>
+        <div class="column has-background-warning bor1">{{k}} : {{v}}</div>
+      {% elif k == "day_change" %}
+        <div class="column has-background-danger bor1">{{k}} : {{v}}</div>
+        <div class="column has-background-danger bor1">{{k}} : {{v}}</div>
+  
+  </div>
+  {% endif %}
+{% endfor %}
+</div> -->
+{% for stock in stocks  %}
+{% for k,v in stock %}
+{% if k == "name" %}
+
+<div class="box has-background-info bor1" id="bor">
+    <div class="columns" >
+      <div class="column is-half has-background-info is-size-2 has-text-centered">{{v}}</div>
+      {% elif k == "price" %}
+        <div class="column has-background-warning bor1">{{k}} : {{v}}</div>
+        <div class="column has-background-warning bor1">{{k}} : {{v}}</div>
+      {% elif k == "day_change" %}
+        <div class="column has-background-danger bor1">{{k}} : {{v}}</div>
+        <div class="column has-background-danger bor1">{{k}} : {{v}}</div>
+  
+  </div>
+  {% endif %}
+{% endfor %}
+</div>
+{% endfor %}
+
+{% endblock %}

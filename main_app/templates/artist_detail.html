@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block content %}
+<div class="detail__img">
+  <img src="{{artist.img}}" alt="{{artist.name}}" />
+</div>
+<div class="detail__name">
+  {% if artist.verified_artist %}
+  <div class="icon-text">
+    <span class="icon has-text-info">
+      <i class="fas fa-check-circle"></i>
+    </span>
+    <span>Verified</span>
+  </div>
+  {% endif %}
+  <h1 class="title">{{artist.name}}</h1>
+</div>
+<div class="detail__container">
+  <div class="buttons">
+    <a href="{% url 'artist_update' artist.pk %}">
+    <button type="button">Update!</button>
+    <!-- a href="" class="button is-info">
+      <span-- class="icon">
+        <i class="fas fa-edit"></i>
+      </span-->
+    </a>
+
+    <a href="{% url 'artist_delete' artist.pk %}">    
+      <button type="button">Delete!</button>
+      <!-- <span class="icon">
+        <i class="fas fa-trash-alt"></i>
+      </span> -->
+    </a>
+  </div>
+  <div class="detail__about">
+    <h4 class="title is-4">About</h4>
+    <p>{{artist.bio}}</p>
+  </div>
+  <!---  for songs-->
+<!-- inside container -->
+<div class="detail__songs mb-5">
+  <h3 class="title is-3">Songs</h3>
+
+  {% for song in artist.songs.all %}
+  <div class="song">
+    <span>{{forloop.counter}}</span>
+    <span><b>{{song.title}}</b></span>
+    <span>{{song.length}}</span>
+  </div>
+  {% empty %}
+  <article class="message">
+    <div class="message-header">
+      <p>No Songs Available</p>
+    </div>
+  </article>
+
+  {% endfor %}
+</div>
+</div>
+
+<!--  above about section  -->
+{% endblock %}
