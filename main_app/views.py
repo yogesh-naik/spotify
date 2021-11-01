@@ -150,7 +150,7 @@ class Signup(View):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            # login(request, user)
             return redirect("artist_list")
         else:
             context = {"form": form}
