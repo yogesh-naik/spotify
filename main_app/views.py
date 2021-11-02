@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.views.generic import DetailView
-
+from django.contrib.auth.forms import UserCreationForm
 from main_app.models import Artist
 # Auth
 from django.contrib.auth.decorators import login_required
@@ -139,7 +139,24 @@ def deleteArtist(request, pk):
     return render(request,"artist_delete.html",{'artist':artist}) 
 
 
+class Signup(View):
+    # show a form to fill out
+    def get(self, request):
+        form = UserCreationForm()
+        context = {"form": form}
+        return render(request, "registration/signup.html", context)
+    # on form submit validate the form and login the user.
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # login(request, user)
+            return redirect("artist_list")
+        else:
+            context = {"form": form}
+            return render(request, "registration/signup.html", context)
 
+###############
 class Stocks(TemplateView):
     template_name = "stock_list.html"
 

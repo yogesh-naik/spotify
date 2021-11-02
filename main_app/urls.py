@@ -12,7 +12,7 @@ urlpatterns = [
     path('artists/new/', views.createArtist, name="artist_create"),
     path('artists/<int:pk>/update',views.ArtistUpdate, name="artist_update"),
     path('artists/<int:pk>/delete',views.deleteArtist, name="artist_delete"),
-    
+    path('accounts/signup/', views.Signup.as_view(), name="signup"),
     #CBV
        # path('artists/new/', views.ArtistCreate.as_view(), name="artist_create"),
     #    path('artists/<int:pk>/', views.ArtistDetail.as_view(), name="artist_detail"),
