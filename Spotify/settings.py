@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-v4w+!w(807!u$$$bygkcj(!s^0#8n$^(f2^03!_0%-isf*v#v^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#Added for heroku
 ALLOWED_HOSTS = ['gruesome-alien-75308.herokuapp.com']
 
 
@@ -49,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',#Added for heroku
 ]
 
 ROOT_URLCONF = 'Spotify.urls'
@@ -80,6 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'spotify',
+        'USER':'yogesh',
+        'PASSWORD':'admin',
     }
 }
 
@@ -130,6 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/artists/'
 LOGOUT_REDIRECT_URL = '/about'
 
+####################  #Added for heroku ##########################################
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
@@ -148,3 +152,5 @@ STATICFILES_DIRS = [
 # MIDDLEWARE_CLASSES = [
 #     'whitenoise.middleware.WhiteNoiseMiddleware',
 # ]
+
+##########################################
